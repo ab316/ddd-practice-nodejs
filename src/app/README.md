@@ -1,0 +1,2 @@
+# The Application layer
+Mediates between the interfaces and the domain. It contains the application logic and orchestrates the domain objects to perform the business logic. It is the entry point for the interfaces to interact with the domain. The use cases are implemented in this layer.
