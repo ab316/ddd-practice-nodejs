@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node ./dist/bundle.js",
     "start:dev": "run-p start:watch build:watch",
+    "dev": "yarn start:dev",
     "build": "run-p build:esbuild test:typecheck",
     "start:watch": "nodemon ./build/index.js",
     "build:watch": "node ./scripts/esbuild.dev.mjs",
