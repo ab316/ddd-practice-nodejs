@@ -1,7 +1,7 @@
 {
   "name": "ddd-practice-nodejs",
   "version": "1.0.0",
-  "description": "Playground with Production Domain-Driven-Design",
+  "description": "Playground for production grade Domain-Driven-Design",
   "main": "index.ts",
   "scripts": {
     "start": "node ./dist/bundle.js",

@@ -10,7 +10,7 @@ This project is a practice of Domain-Driven Design (DDD) in the context of an AP
 
 ## Project
 ### Compilation
-This project uses ESBuild to compile the TypeScript code. It uses a plugin to type-check the code before compiling it for the nodemon dev server. The production build uses `tsc` to type-check the code in parallel with ESBuild.
+This project uses ESBuild to compile the TypeScript code. It uses a plugin to type-check the code in parallel with compiling it for the nodemon dev server. The production build uses `tsc` to type-check the code in parallel with ESBuild.
 
 ### Linting
 This project uses ESLint to lint the code and Prettier to format the code.
