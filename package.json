@@ -1,0 +1,26 @@
+{
+  "name": "ddd-practice-nodejs",
+  "version": "1.0.0",
+  "description": "Playground with Production Domain-Driven-Design",
+  "main": "index.ts",
+  "scripts": {
+    "start": "node ./dist/bundle.js",
+    "start:dev": "run-p start:watch build:watch",
+    "build": "run-p build:esbuild test:typecheck",
+    "start:watch": "nodemon ./build/index.js",
+    "build:watch": "node ./scripts/esbuild.dev.mjs",
+    "build:esbuild": "node ./scripts/esbuild.mjs",
+    "test:typecheck": "tsc --project tsconfig.typecheck.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@jgoz/esbuild-plugin-typecheck": "^3.1.1",
+    "esbuild": "^0.20.2",
+    "nodemon": "^3.1.0",
+    "npm-run-all": "^4.1.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}
