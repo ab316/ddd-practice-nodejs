@@ -3,6 +3,7 @@ import { Container } from 'inversify';
 import { provide } from 'inversify-binding-decorators';
 import { InversifyExpressServer } from 'inversify-express-utils';
 import './controllers';
+import { errorHandler } from './middleware';
 
 @provide(HttpServer)
 export default class HttpServer {
@@ -15,17 +16,7 @@ export default class HttpServer {
     });
 
     server.setErrorConfig((app) => {
-      app.use(
-        (
-          err: Error,
-          req: express.Request,
-          res: express.Response,
-          _next: express.NextFunction,
-        ): void => {
-          console.error(err.stack);
-          res.status(500).send('Something broke!');
-        },
-      );
+      app.use(errorHandler);
     });
 
     this.app = server.build();
