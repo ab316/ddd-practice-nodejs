@@ -1,0 +1,10 @@
+version: '3'
+services:
+  gateway:
+    image: node:20.12.2-alpine3.19
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    working_dir: /app
+    command: yarn start:dev
