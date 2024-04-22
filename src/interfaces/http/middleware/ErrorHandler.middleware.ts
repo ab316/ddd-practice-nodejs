@@ -7,6 +7,15 @@ export const errorHandler = (
   res: express.Response,
   _next: express.NextFunction,
 ) => {
-  console.error(err.stack);
-  res.status(StatusCodes.INTERNAL_SERVER_ERROR).send('Something broke!');
+  const urlWithoutQuery = req.url.split('?')[0];
+  res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+    message: err.message,
+    status: StatusCodes.INTERNAL_SERVER_ERROR,
+    url: urlWithoutQuery,
+    query: req.query,
+    error: {
+      message: err.message,
+      stack: err.stack,
+    },
+  });
 };
