@@ -14,6 +14,20 @@ export default class HttpServer {
       app.disable('x-powered-by');
     });
 
+    server.setErrorConfig((app) => {
+      app.use(
+        (
+          err: Error,
+          req: express.Request,
+          res: express.Response,
+          _next: express.NextFunction,
+        ): void => {
+          console.error(err.stack);
+          res.status(500).send('Something broke!');
+        },
+      );
+    });
+
     this.app = server.build();
   }
 
