@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Playground for production grade Domain-Driven-Design",
   "main": "index.ts",
+  "engines": {
+    "node": ">=20.0.0",
+    "yarn": ">=4.1.1"
+  },
   "scripts": {
     "start": "node ./dist/bundle.js",
     "start:dev": "run-p start:watch build:watch",
@@ -45,5 +49,6 @@
     "prettier": "^3.2.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
-  }
+  },
+  "packageManager": "yarn@4.1.1"
 }
