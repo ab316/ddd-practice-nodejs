@@ -1,7 +1,9 @@
 version: '3'
 services:
   gateway:
-    image: node:20.12.2-alpine3.19
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
     volumes:
       - .:/app
     ports:
