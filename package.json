@@ -12,7 +12,7 @@
     "start:dev": "run-p start:watch build:watch",
     "dev": "yarn start:dev",
     "build": "run-p build:esbuild test:typecheck",
-    "start:watch": "nodemon ./build/index.js",
+    "start:watch": "nodemon --exec node --enable-source-maps ./build/index.js",
     "build:watch": "node ./scripts/esbuild.dev.mjs",
     "build:esbuild": "node ./scripts/esbuild.mjs",
     "test:typecheck": "tsc --project tsconfig.typecheck.json",
